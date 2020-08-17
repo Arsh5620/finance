@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingTop="@dimen/recyclerview_margin"
+    android:paddingBottom="@dimen/recyclerview_margin">
+
+    <ImageView
+        android:id="@+id/recyclerview_user_image"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="12dp"
+        android:src="@drawable/ic_transaction"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recyclerview_value_payer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:width="160dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview_user_image"
+        app:layout_constraintStart_toEndOf="@+id/recyclerview_user_image"
+        tools:text="Arshdeep Singh" />
+
+    <TextView
+        android:id="@+id/recyclerview_value_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview_value_payer"
+        app:layout_constraintStart_toEndOf="@+id/recyclerview_value_payer"
+        tools:text="21/7/2018" />
+
+    <TextView
+        android:id="@+id/recyclerview_value_entrants"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview_value_date"
+        app:layout_constraintStart_toEndOf="@+id/recyclerview_value_date"
+        app:layout_constraintTop_toTopOf="@+id/recyclerview_value_date"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="5u" />
+
+    <TextView
+        android:id="@+id/recyclerview_value_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerview_value_entrants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recyclerview_value_entrants"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="$283.77" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

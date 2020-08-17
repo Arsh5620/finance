@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Finance Management</string>
+    <string name="recyclerviewmain_date">"Date: "</string>
+    <string name="recyclerview_entrants">Entrants:</string>
+    <string name="recyclerview_amount">Amount:</string>
+    <string name="recyclerview_paidby">Paid by:</string>
+    <string name="add_new_record_amount_spent">Amount spent:</string>
+    <string name="add_new_record_add_another_person">Add Person</string>
+    <string name="add_new_record_submit_all">Submit All</string>
+    <string name="add_new_record_alert_no_payer_title">No payer</string>
+    <string name="add_new_record_alert_no_payer_text">No payer set for this transaction</string>
+    <string name="add_new_record_alert_amount_conflict_title">Amount conflict</string>
+    <string name="add_new_record_alert_amount_conflict_text">Somehow the amount spent by each individual does not match up to the total amount spent in the group, discard this transaction and try again.</string>
+    <string name="add_member_name">"Member name: "</string>
+    <string name="add_member_amount">"Amount: "</string>
+    <string name="add_member_amount_text">$100.00</string>
+    <string name="add_member_bill_paid">"Bill paid: "</string>
+    <string name="add_member_submit_text">Submit</string>
+    <string name="add_new_user_name_text">"User Name: "</string>
+    <string name="add_new_user_text">Add New User</string>
+    <string name="add_new_user_missing_text">Missing Text</string>
+    <string name="add_new_user_cancel_transaction_text">Please enter a name, or hit back button to cancel.</string>
+</resources>

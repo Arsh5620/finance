@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNewRecordActivity">
+
+    <TextView
+        android:id="@+id/add_new_record_header_spent"
+        style="@style/TextBoxHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new_record_amount_spent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/add_new_record_value_spent"
+        style="@style/TextBoxHeaderText"
+        android:layout_width="0dp"
+        android:hint="@null"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/add_new_record_header_spent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/add_new_record_header_spent"
+        app:layout_constraintTop_toTopOf="@+id/add_new_record_header_spent" />
+
+    <Button
+        android:id="@+id/add_new_record_button_add_contributor"
+        style="@style/MyButtonStyles"
+        android:layout_marginTop="8dp"
+        android:onClick="addContributor"
+        android:text="@string/add_new_record_add_another_person"
+        app:layout_constraintEnd_toStartOf="@+id/add_new_record_button_submit"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_record_value_spent" />
+
+    <Button
+        android:id="@+id/add_new_record_button_submit"
+        style="@style/MyButtonStyles"
+        android:layout_marginStart="59dp"
+        android:onClick="submitClicked"
+        android:text="@string/add_new_record_submit_all"
+        app:layout_constraintBottom_toBottomOf="@+id/add_new_record_button_add_contributor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/add_new_record_button_add_contributor"
+        app:layout_constraintTop_toTopOf="@+id/add_new_record_button_add_contributor" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/add_new_record_recyclerview_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/add_new_record_recyclerview_margin"
+        android:maxHeight="220dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_record_button_submit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
