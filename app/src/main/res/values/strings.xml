@@ -20,4 +20,12 @@
     <string name="add_new_user_text">Add New User</string>
     <string name="add_new_user_missing_text">Missing Text</string>
     <string name="add_new_user_cancel_transaction_text">Please enter a name, or hit back button to cancel.</string>
+    <string name="activity_mortgage_payment_calculator_text">Mortgage Payment Calculator</string>
+    <string name="activity_mortgage_amount_text">Mortgage Amount</string>
+    <string name="activity_mortgage_amortization_period_text">Amortization Period</string>
+    <string name="activity_mortgage_payment_frequency_text">Payment Frequency</string>
+    <string name="activity_mortgage_interest_term_text">Interest Term</string>
+    <string name="activity_mortgage_interest_amount_text">Interest Amount</string>
+    <string name="activity_mortgage_interest_type_text">Interest Type</string>
+    <string name="activity_mortgage_button_calculate_text">Calculate</string>
 </resources>

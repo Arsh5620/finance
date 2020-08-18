@@ -11,15 +11,16 @@ import org.arshdeep.financemanagement.objects.RecordInformation
 import java.util.*
 import kotlin.collections.ArrayList
 
-public class MainActivityRecyclerViewAdapter(recordInformation: Array<RecordInformation?>?
-    , private var context: Activity) :
+class MainActivityRecyclerViewAdapter(recordInformation: Array<RecordInformation?>?,
+    private var context: Activity) :
     RecyclerView.Adapter<MainActivityRecyclerViewHolder>()
 {
     private val recordInformationList = ArrayList<RecordInformation>()
-    public fun getRecordInformationList(): ArrayList<RecordInformation>
+    fun getRecordInformationList(): ArrayList<RecordInformation>
     {
         return (this.recordInformationList)
     }
+
     private var clickListener: MainActivityRecyclerViewClickListener? = null
 
     fun setClickListener(clickListener: MainActivityRecyclerViewClickListener?)
@@ -72,7 +73,7 @@ public class MainActivityRecyclerViewAdapter(recordInformation: Array<RecordInfo
     {
         val inflatedView: View = LayoutInflater
             .from(context)
-            .inflate(R.layout.home_recyclerview, parent, false)
+            .inflate(R.layout.recyclerview_split_bill, parent, false)
         return MainActivityRecyclerViewHolder(inflatedView, clickListener)
     }
 

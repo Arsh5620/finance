@@ -14,24 +14,23 @@ import androidx.recyclerview.widget.RecyclerView
 import org.arshdeep.financemanagement.kotlin.*
 import org.arshdeep.financemanagement.objects.RecordInformation
 
-class MainActivity : AppCompatActivity()
+class SplitBillActivity : AppCompatActivity()
 {
     private lateinit var adapter: MainActivityRecyclerViewAdapter
     private var selectionOngoing = false
     private var selectionCounter = 0
     private val ADD_OBJECT_ACTIVITY_CODE = 1
 
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_split_bill)
         Database.factory(this)
 
         val recyclerView: RecyclerView =
             findViewById<View>(R.id.recyclerview_main) as RecyclerView
-        adapter = MainActivityRecyclerViewAdapter(null, this);
+        adapter = MainActivityRecyclerViewAdapter(null, this)
 
         val helper = object : ItemTouchHelper.SimpleCallback(0
             , ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT)
@@ -48,7 +47,8 @@ class MainActivity : AppCompatActivity()
             {
                 val position: Int = viewHolder.adapterPosition
                 val info: RecordInformation = adapter.getItem(position)
-                Toast.makeText(this@MainActivity, "Deleting no longer allowed.",
+                Toast.makeText(this@SplitBillActivity,
+                    "Deleting no longer allowed.",
                     Toast.LENGTH_SHORT).show()
                 if (selectionOngoing && info.getSelected())
                 {
@@ -111,14 +111,9 @@ class MainActivity : AppCompatActivity()
                     }
                     else
                     {
-                        Toast.makeText(this@MainActivity,
+                        Toast.makeText(this@SplitBillActivity,
                             "TODO: Not Implemented",
                             Toast.LENGTH_LONG).show()
-//                        val intent = Intent(this@MainActivity,
-//                            ViewRecordInfoActivity::class.java)
-//                        intent.putExtra("recordId",
-//                            adapter.getItem(position).getRowId())
-//                        startActivity(intent)
                     }
                 }
             }
@@ -204,7 +199,8 @@ class MainActivity : AppCompatActivity()
 
     fun addNewTransaction(view: View?)
     {
-        val intent = Intent(this@MainActivity, AddNewRecordActivity::class.java)
+        val intent =
+            Intent(this@SplitBillActivity, AddNewRecordActivity::class.java)
         startActivityForResult(intent, ADD_OBJECT_ACTIVITY_CODE)
     }
 }

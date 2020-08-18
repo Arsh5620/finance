@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MortgageActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_payment_calculator_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="textViewMortgageAmount, textViewAmortizationPeriod, textViewInterestAmount, textViewInterestTerm, textViewInterestType" />
+
+    <TextView
+        android:id="@+id/textViewMortgageAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_amount_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextMortgageAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextMortgageAmount"
+        android:labelFor="@+id/editTextMortgageAmount" />
+
+    <EditText
+        android:id="@+id/editTextMortgageAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
+        android:inputType="numberDecimal"
+        android:autofillHints="@null" />
+
+    <TextView
+        android:id="@+id/textViewAmortizationPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_amortization_period_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextAmortizationPeriod"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextAmortizationPeriod"
+        android:labelFor="@+id/editTextAmortizationPeriod" />
+
+    <EditText
+        android:id="@+id/editTextAmortizationPeriod"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintTop_toBottomOf="@id/editTextMortgageAmount"
+        android:inputType="number"
+        android:autofillHints="@null" />
+
+    <TextView
+        android:id="@+id/textViewPaymentFrequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_payment_frequency_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextPaymentFrequency"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPaymentFrequency"
+        android:labelFor="@+id/editTextPaymentFrequency" />
+
+    <EditText
+        android:id="@+id/editTextPaymentFrequency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintTop_toBottomOf="@id/editTextAmortizationPeriod"
+        android:inputType="text"
+        android:autofillHints="@null" />
+
+    <TextView
+        android:id="@+id/textViewInterestTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_interest_term_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextInterestTerm"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextInterestTerm"
+        android:labelFor="@+id/editTextInterestTerm" />
+
+    <EditText
+        android:id="@+id/editTextInterestTerm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintTop_toBottomOf="@id/editTextPaymentFrequency"
+        android:inputType="text"
+        android:autofillHints="@null" />
+
+    <TextView
+        android:id="@+id/textViewInterestAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_interest_amount_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextInterestAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextInterestAmount"
+        android:labelFor="@id/editTextInterestAmount" />
+
+    <EditText
+        android:id="@+id/editTextInterestAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintTop_toBottomOf="@id/editTextInterestTerm"
+        android:inputType="numberDecimal"
+        android:autofillHints="@null" />
+
+    <TextView
+        android:id="@+id/textViewInterestType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_interest_type_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editTextInterestType"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextInterestType"
+        android:labelFor="@+id/editTextInterestType" />
+
+    <EditText
+        android:id="@+id/editTextInterestType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintTop_toBottomOf="@id/editTextInterestAmount"
+        android:inputType="text"
+        android:autofillHints="@null" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/activity_mortgage_button_calculate_text"
+        app:layout_constraintStart_toEndOf="@id/barrier1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextInterestType"
+        android:layout_margin="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

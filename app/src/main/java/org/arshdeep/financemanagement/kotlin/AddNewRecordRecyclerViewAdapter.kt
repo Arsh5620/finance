@@ -42,7 +42,7 @@ class AddNewRecordRecyclerViewAdapter :
     {
         val inflatedView: View = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.add_new_record_recyclerviewitem, parent, false)
+            .inflate(R.layout.recyclerviewitem_add_new_record, parent, false)
         return AddNewRecordRecyclerViewHolder(inflatedView)
     }
 
