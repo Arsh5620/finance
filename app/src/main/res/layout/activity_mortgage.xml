@@ -4,15 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MortgageActivity">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/activity_mortgage_payment_calculator_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".MortgageActivity"
+    android:paddingTop="12dp">
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier1"
@@ -29,7 +22,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextMortgageAmount"
         app:layout_constraintBottom_toBottomOf="@+id/editTextMortgageAmount"
-        android:labelFor="@+id/editTextMortgageAmount" />
+        android:labelFor="@+id/editTextMortgageAmount"
+        style="@style/ActivityMortgageTextBoxStyles" />
 
     <EditText
         android:id="@+id/editTextMortgageAmount"
@@ -39,9 +33,10 @@
         android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier1"
-        app:layout_constraintTop_toBottomOf="@id/textView1"
+        app:layout_constraintTop_toTopOf="parent"
         android:inputType="numberDecimal"
-        android:autofillHints="@null" />
+        android:autofillHints="@null"
+        android:text="@string/activity_mortgage_amount_default" />
 
     <TextView
         android:id="@+id/textViewAmortizationPeriod"
@@ -51,7 +46,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextAmortizationPeriod"
         app:layout_constraintBottom_toBottomOf="@+id/editTextAmortizationPeriod"
-        android:labelFor="@+id/editTextAmortizationPeriod" />
+        android:labelFor="@+id/editTextAmortizationPeriod"
+        style="@style/ActivityMortgageTextBoxStyles" />
 
     <EditText
         android:id="@+id/editTextAmortizationPeriod"
@@ -63,20 +59,23 @@
         app:layout_constraintStart_toEndOf="@id/barrier1"
         app:layout_constraintTop_toBottomOf="@id/editTextMortgageAmount"
         android:inputType="number"
-        android:autofillHints="@null" />
+        android:autofillHints="@null"
+        android:text="@string/activity_mortgage_amortization_default" />
+
 
     <TextView
-        android:id="@+id/textViewPaymentFrequency"
+        android:id="@+id/textViewInterestAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_mortgage_payment_frequency_text"
+        android:text="@string/activity_mortgage_interest_amount_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTextPaymentFrequency"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextPaymentFrequency"
-        android:labelFor="@+id/editTextPaymentFrequency" />
+        app:layout_constraintTop_toTopOf="@id/editTextInterestAmount"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextInterestAmount"
+        android:labelFor="@id/editTextInterestAmount"
+        style="@style/ActivityMortgageTextBoxStyles" />
 
     <EditText
-        android:id="@+id/editTextPaymentFrequency"
+        android:id="@+id/editTextInterestAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -84,7 +83,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier1"
         app:layout_constraintTop_toBottomOf="@id/editTextAmortizationPeriod"
-        android:inputType="text"
+        android:inputType="numberDecimal"
+        android:text="@string/activity_mortgage_interestamount_default"
         android:autofillHints="@null" />
 
     <TextView
@@ -95,7 +95,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editTextInterestTerm"
         app:layout_constraintBottom_toBottomOf="@+id/editTextInterestTerm"
-        android:labelFor="@+id/editTextInterestTerm" />
+        android:labelFor="@+id/editTextInterestTerm"
+        style="@style/ActivityMortgageTextBoxStyles" />
 
     <EditText
         android:id="@+id/editTextInterestTerm"
@@ -105,31 +106,34 @@
         android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier1"
-        app:layout_constraintTop_toBottomOf="@id/editTextPaymentFrequency"
-        android:inputType="text"
-        android:autofillHints="@null" />
+        app:layout_constraintTop_toBottomOf="@id/editTextInterestAmount"
+        android:inputType="number"
+        android:autofillHints="@null"
+        android:text="@string/activity_mortgage_interestterm_default" />
 
     <TextView
-        android:id="@+id/textViewInterestAmount"
+        android:id="@+id/textViewPaymentFrequency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity_mortgage_interest_amount_text"
+        android:text="@string/activity_mortgage_payment_frequency_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editTextInterestAmount"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextInterestAmount"
-        android:labelFor="@id/editTextInterestAmount" />
+        app:layout_constraintTop_toTopOf="@id/editTextPaymentFrequency"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextPaymentFrequency"
+        android:labelFor="@+id/editTextPaymentFrequency"
+        style="@style/ActivityMortgageTextBoxStyles" />
 
-    <EditText
-        android:id="@+id/editTextInterestAmount"
+    <Spinner
+        android:id="@+id/editTextPaymentFrequency"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/activity_mortgage_spinner_height"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier1"
         app:layout_constraintTop_toBottomOf="@id/editTextInterestTerm"
-        android:inputType="numberDecimal"
-        android:autofillHints="@null" />
+        android:inputType="text"
+        android:autofillHints="@null"
+        android:entries="@array/payment_frequency_array" />
 
     <TextView
         android:id="@+id/textViewInterestType"
@@ -139,19 +143,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/editTextInterestType"
         app:layout_constraintBottom_toBottomOf="@+id/editTextInterestType"
-        android:labelFor="@+id/editTextInterestType" />
+        android:labelFor="@+id/editTextInterestType"
+        style="@style/ActivityMortgageTextBoxStyles" />
 
-    <EditText
+    <Spinner
         android:id="@+id/editTextInterestType"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/activity_mortgage_spinner_height"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier1"
-        app:layout_constraintTop_toBottomOf="@id/editTextInterestAmount"
+        app:layout_constraintTop_toBottomOf="@id/editTextPaymentFrequency"
         android:inputType="text"
-        android:autofillHints="@null" />
+        android:autofillHints="@null"
+        android:entries="@array/interest_type_array" />
 
     <Button
         android:id="@+id/button1"
@@ -161,6 +167,7 @@
         app:layout_constraintStart_toEndOf="@id/barrier1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextInterestType"
-        android:layout_margin="12dp" />
+        android:layout_margin="12dp"
+        android:onClick="buttonMortgageCalculateOnClick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

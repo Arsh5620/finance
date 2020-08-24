@@ -5,4 +5,5 @@
     <dimen name="add_new_record_recyclerview_margin">16dp</dimen>
     <dimen name="dimens_font_size_universal">16sp</dimen>
     <dimen name="dimens_font_size_heading">18sp</dimen>
+    <dimen name="activity_mortgage_spinner_height">44dp</dimen>
 </resources>

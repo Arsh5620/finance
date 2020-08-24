@@ -10,14 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="false">
-        <activity android:name=".MortgageActivity" />
-        <activity android:name=".SplitBillActivity" />
-        <activity android:name=".AddNewUser" />
-        <activity android:name=".AddMemberActivity" />
-        <activity android:name=".AddNewRecordActivity" />
+        <activity
+            android:name=".MortgageActivity"
+            android:label="@string/mortgage_activity_title_text" />
+        <activity
+            android:name=".SplitBillActivity"
+            android:label="@string/split_bill_activity_title_text" />
+        <activity
+            android:name=".AddNewUser"
+            android:label="@string/add_new_user_title_text" />
+        <activity
+            android:name=".AddMemberActivity"
+            android:label="@string/add_member_activity_title_text" />
+        <activity
+            android:name=".AddNewRecordActivity"
+            android:label="@string/add_new_purchase_title_text" />
         <activity
             android:name=".HomeScreenActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:label="@string/home_screen_activity_title_text">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
