@@ -13,27 +13,11 @@ class AddNewRecordRecyclerViewAdapter :
 {
     val store: ArrayList<Dictionary<String?, Any>> = ArrayList()
     fun addItem(personName: String,
-        amount: Double,
-        uniqueID: Int,
-        isPayer: Boolean): Boolean
+        uniqueID: Int): Boolean
     {
-        for (s1 in store)
-        {
-            if (s1["id"] as Int == uniqueID)
-            {
-                return false
-            }
-            if (isPayer && s1["payer"] as Boolean)
-            {
-                return false
-            }
-        }
-
         val dictionary: Dictionary<String?, Any> = Hashtable(0x5)
         dictionary.put("name", personName)
-        dictionary.put("amount", amount)
         dictionary.put("id", uniqueID)
-        dictionary.put("payer", isPayer)
         return store.add(dictionary)
     }
 
@@ -42,7 +26,7 @@ class AddNewRecordRecyclerViewAdapter :
     {
         val inflatedView: View = LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.recyclerviewitem_add_new_record, parent, false)
+            .inflate(R.layout.recyclerview_add_new_record, parent, false)
         return AddNewRecordRecyclerViewHolder(inflatedView)
     }
 
@@ -50,8 +34,7 @@ class AddNewRecordRecyclerViewAdapter :
         position: Int)
     {
         val data = store[position]
-        holder.setAmount(data["amount"] as Double)
-        holder.setImageVisibility(data["payer"] as Boolean)
+        holder.setAmount(data["id"] as Double)
         holder.setName(data["name"] as String)
     }
 

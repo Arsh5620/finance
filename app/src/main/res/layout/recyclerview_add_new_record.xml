@@ -18,12 +18,13 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:width="160dp"
         android:scrollHorizontally="true"
         android:ellipsize="end"
         tools:text="Arshdeep Singh" />
 
-    <TextView
+    <EditText
         android:id="@+id/add_new_record_recyclerview_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,16 +34,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="12dp"
+        android:inputType="numberDecimal"
         tools:text="$200.00" />
 
-    <ImageView
-        android:id="@+id/add_new_record_recyclerview_payer_image"
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/add_new_record_recyclerview_checkbox"
+        app:layout_constraintTop_toTopOf="@+id/add_new_record_recyclerview_checkbox"
+        app:layout_constraintBottom_toBottomOf="@+id/add_new_record_recyclerview_checkbox"/>
+
+    <RadioButton
+        android:id="@+id/add_new_record_recyclerview_checkbox"
         android:layout_width="0dp"
         android:layout_height="26dp"
         android:layout_marginEnd="12dp"
-        android:background="@drawable/ic_transaction"
         android:contentDescription="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/add_new_record_recyclerview_amount" />
+        app:layout_constraintEnd_toStartOf="@+id/add_new_record_recyclerview_amount"
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

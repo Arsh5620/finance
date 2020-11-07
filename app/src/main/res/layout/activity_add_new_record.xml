@@ -27,7 +27,7 @@
         app:layout_constraintStart_toEndOf="@+id/add_new_record_header_spent"
         app:layout_constraintTop_toTopOf="@+id/add_new_record_header_spent" />
 
-    <Button
+   <!-- <Button
         android:id="@+id/add_new_record_button_add_contributor"
         style="@style/MyButtonStyles"
         android:layout_marginTop="8dp"
@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toStartOf="@+id/add_new_record_button_submit"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_new_record_value_spent" />
+        app:layout_constraintTop_toBottomOf="@+id/add_new_record_value_spent" /> -->
 
     <Button
         android:id="@+id/add_new_record_button_submit"
@@ -44,11 +44,10 @@
         android:layout_marginStart="59dp"
         android:onClick="submitClicked"
         android:text="@string/add_new_record_submit_all"
-        app:layout_constraintBottom_toBottomOf="@+id/add_new_record_button_add_contributor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@+id/add_new_record_button_add_contributor"
-        app:layout_constraintTop_toTopOf="@+id/add_new_record_button_add_contributor" />
+        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_new_record_value_spent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/add_new_record_recyclerview_main"

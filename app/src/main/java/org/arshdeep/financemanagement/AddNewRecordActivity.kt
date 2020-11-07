@@ -38,6 +38,11 @@ class AddNewRecordActivity : AppCompatActivity()
         adapter = AddNewRecordRecyclerViewAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+        for(i in Database.factory().getUsers())
+        {
+            adapter.addItem(i.getUserName()!!, i.getUserID())
+        }
     }
 
     /*
@@ -170,9 +175,7 @@ class AddNewRecordActivity : AppCompatActivity()
                     val paid =
                         data.getBooleanExtra("userPaid", false)
 
-                    if (adapter.addItem(userInfo[USER_INFO_NAME]
-                                , amount
-                                , userInfo[USER_INFO_ID].toInt(), paid))
+                    if (adapter.addItem(userInfo[USER_INFO_NAME], userInfo[USER_INFO_ID].toInt()))
                     {
                         adapter.notifyItemInserted(adapter.itemCount)
                         if (paid)

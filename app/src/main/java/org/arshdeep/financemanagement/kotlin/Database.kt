@@ -17,20 +17,22 @@ class Database private constructor(context: Context?,
 
     companion object
     {
-        private var connection: Database? = null
+        private lateinit var connection: Database
+        private var setupDone: Boolean = false
         private var database: SQLiteDatabase? = null
 
-        fun factory(context: Context?): Database?
+        fun factory(context: Context?): Database
         {
-            if (connection == null || !connection!!.writableDatabase.isOpen)
+            if (setupDone == false || !connection!!.writableDatabase.isOpen)
             {
                 connection = Database(context, "data.sqlite3")
                 this.database = connection!!.writableDatabase
+                setupDone = true
             }
             return connection
         }
 
-        fun factory(): Database?
+        fun factory(): Database
         {
             return factory(null)
         }
